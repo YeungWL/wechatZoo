@@ -1,0 +1,629 @@
+@import './mixin';
+::-webkit-scrollbar {
+  display: none;
+}
+*{margin:0;padding:0;list-style: none;}
+/* 头部滑动 */
+.wrapper{
+  background: #fff;
+  height: p2r(88);
+  width:100%;
+  box-shadow: 0 0 1px 1px #ccc;
+  overflow-x: auto;
+  position: fixed;
+  top:0;
+  z-index: 5;
+  ul.yltdh{
+    width: p2r(985);
+    height: p2r(88);
+    li{
+      float: left;
+      font-size: p2r(30);
+      margin: p2r(25) p2r(25) p2r(28);
+      color: #9a9a9a;
+    }
+    li.active {
+      color: #57bf3f;
+    }
+    :nth-child(1) {
+      margin-right: p2r(3);
+      margin-top: p2r(15);
+    }
+    li.searchIcon {
+      width: p2r(47);
+      height: p2r(47);
+      background: url("../images/yldIcon.png") 0 p2r(10) no-repeat;
+      background-size: cover;
+    }
+  }
+}
+/* 搜索框 */
+.searBtn{
+  position: absolute;
+  z-index:6;
+  top:0;
+  padding:p2r(11) 0;
+  background: #fff;
+  &::before{
+    content:'';
+    position: absolute;
+    width:p2r(45);
+    height:p2r(45);
+    margin-top:p2r(6);
+    margin-left:p2r(35);
+    background:url('../images/yldIcon.png') p2r(0) p2r(10) no-repeat;
+    background-size: cover;
+  }
+  input[type=text],.searRight{
+    float:left;
+  }
+  input[type=text]{
+    width:p2r(554);
+    height:p2r(58);
+    margin-left:p2r(23);
+    border:1px solid #b6b6b6;
+    color:#7c7c7c;
+    border-radius: 3px;
+    outline: none;
+    padding-left:p2r(70);
+    background: #f6f6f6;
+  }
+  .searRight{
+    width:p2r(98);
+    height:p2r(63);
+    line-height:p2r(63);
+    color:#7c7c7c;
+    text-align: center;
+    font-size:p2r(25);
+  }
+}
+/* 侧边栏 */
+ul.aside {
+  position: fixed;
+  top: p2r(160);
+  right: p2r(25);
+  width: p2r(83);
+  li {
+    width: p2r(81);
+    height: p2r(93);
+    float: left;
+    padding: 0 p2r(3);
+    margin-top: 2px;
+    box-shadow: 0 0 1px 1px #ccc;
+    background: #fff;
+    .ArIcon,
+    .JsIcon,
+    .DdIcon,
+    .LxIcon {
+      width: p2r(40);
+      height: p2r(40);
+      margin: p2r(8) p2r(22) 0;
+      background: url("../images/yldIcon.png") p2r(0) p2r(-67)
+        no-repeat;
+      background-size: cover;
+    }
+    .JsIcon {
+      background-position: p2r(0) p2r(-111);
+    }
+    .DdIcon {
+      background-position: p2r(0) p2r(-149);
+    }
+    .LxIcon {
+      background-position: p2r(0) p2r(-193);
+    }
+    .asideTitle {
+      height: p2r(36);
+      line-height: p2r(36);
+      font-size: p2r(20);
+      text-align: center;
+      color: #bab9b9;
+    }
+  }
+  li.active {
+    box-shadow: 0 0 1px 1px #57bf3f;
+    .ArIcon,
+    .JsIcon,
+    .DdIcon,
+    .LxIcon {
+      background: url("../images/yldIcon2.png") p2r(0) p2r(-67)
+        no-repeat;
+      background-size: cover;
+    }
+    .asideTitle {
+      color: #57bf3f;
+    }
+    .JsIcon {
+      background-position: p2r(0) p2r(-111);
+    }
+    .DdIcon {
+      background-position: p2r(0) p2r(-149);
+    }
+    .LxIcon {
+      background-position: p2r(0) p2r(-193);
+    }
+  }
+  :nth-child(1) {
+    margin-bottom: p2r(23);
+  }
+}
+/* 底部 左和右边 */
+.yltLeft,
+  .yltRight {
+    a{
+      outline: none;
+      border: none;
+      -webkit-tap-highlight-color: rgba(0, 0, 0, 0);
+    }
+    position: fixed;
+    bottom: p2r(32);
+    width: p2r(80);
+    height: p2r(80);
+    border-radius: 50%;
+    box-shadow: 0 0 1px 1px #ccc;
+    background: #fff;
+  }
+  .yltLeft {
+    left: p2r(24);
+  }
+  .yltRight {
+    right: p2r(24);
+  }
+  .LeftIcon,
+  .RightIcon {
+    position: absolute;
+    width: p2r(45);
+    height: p2r(45);
+    margin: p2r(16) p2r(17) p2r(20);
+    background: url("../images/yldIcon.png") 0 p2r(-264) no-repeat;
+    background-size: cover;
+  }
+  .RightIcon {
+    margin-top: p2r(20);
+    background-position: 0 p2r(-317);
+  }
+  .yltLeft.active,
+  .yltRight.active {
+    box-shadow: 0 0 1px 1px #57bf3f;
+    .LeftIcon,
+    .RightIcon {
+      background: url("../images/yldIcon2.png") 0 p2r(-264) no-repeat;
+      background-size: cover;
+    }
+    .RightIcon {
+      background-position: 0 p2r(-317);
+    }
+  }
+  .bgColor{
+    position: fixed;
+    bottom:0;
+    z-index: 7;
+    width:100%;
+    height: 100%;
+    background: rgba(30, 30, 30, .4);
+  }
+  /* 地图 */
+  .footer {
+    position: absolute;
+    margin-top: p2r(88);
+    width: 100%;
+    height: 100%;
+    background: url("../images/yltBg.png") p2r(-50) p2r(40) no-repeat;
+    background-size: cover;
+  }
+  /* 语音解说 */
+  .jstk {
+    position: fixed;
+    z-index: 9;
+    width: p2r(610);
+    height: p2r(160);
+    top:p2r(282);
+    left:p2r(21);
+    background: #fff;
+    box-shadow: 0 0 1px 1px #ccc;
+    border-radius: 4px;
+    div.jstkTop {
+      padding:p2r(10) p2r(20);
+      overflow: hidden;
+      .jsClose{
+        position:absolute;
+        right: p2r(20);
+        top: p2r(20);
+        font-size:p2r(35);
+        color:#6bd551;
+      }
+      .jsTitle,
+      .mui-switch,
+      .jsClose {
+        float: left;
+      }
+      .jsTitle{
+        margin-right:p2r(30);
+        font-size:p2r(30);
+        line-height: p2r(50);
+      }
+      .mui-switch {
+        margin-right: p2r(13);
+      }
+    }
+    p{
+        padding:p2r(10) p2r(20);
+        margin:0;
+        line-height:p2r(30);
+        font-size:p2r(25);
+        letter-spacing: 1px;
+        color:#8a8a8a;
+      }
+  }
+  /* 开关控制 */
+  .mui-switch {
+    width: p2r(86);
+    height: p2r(51);
+    position: relative;
+    border: 1px solid #dfdfdf;
+    background-color: #fdfdfd;
+    box-shadow: #dfdfdf 0 0 0 0 inset;
+    border-radius: p2r(25);
+    border-top-left-radius: p2r(25);
+    border-top-right-radius: p2r(25);
+    border-bottom-left-radius: p2r(25);
+    border-bottom-right-radius: p2r(25);
+    background-clip: content-box;
+    display: inline-block;
+    -webkit-appearance: none;
+    user-select: none;
+    outline: none;
+}
+
+.mui-switch:before {
+    content: '';
+    width: p2r(45);
+    height: p2r(45);
+    position: absolute;
+    top: 0px;
+    left: 0;
+    border-radius: 20px;
+    border-top-left-radius: 20px;
+    border-top-right-radius: 20px;
+    border-bottom-left-radius: 20px;
+    border-bottom-right-radius: 20px;
+    background-color: #fff;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mui-switch:checked {
+    border-color: #64bd63;
+    box-shadow: #64bd63 0 0 0 16px inset;
+    background-color: #64bd63;
+}
+
+.mui-switch:checked:before {
+    left: 21px;
+}
+
+.mui-switch.mui-switch-animbg {
+    transition: background-color ease 0.4s;
+}
+
+.mui-switch.mui-switch-animbg:before {
+    transition: left 0.3s;
+}
+
+.mui-switch.mui-switch-animbg:checked {
+    box-shadow: #dfdfdf 0 0 0 0 inset;
+    background-color: #64bd63;
+    transition: border-color 0.4s, background-color ease 0.4s;
+}
+
+.mui-switch.mui-switch-animbg:checked:before {
+    transition: left 0.3s;
+}
+
+.mui-switch.mui-switch-anim {
+    transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s;
+}
+
+.mui-switch.mui-switch-anim:before {
+    transition: left 0.3s;
+}
+
+.mui-switch.mui-switch-anim:checked {
+    box-shadow: #64bd63 0 0 0 16px inset;
+    background-color: #64bd63;
+    transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s;
+}
+
+.mui-switch.mui-switch-anim:checked:before {
+    transition: left 0.3s;
+}
+/* zoo景点 */
+.gzJinDian{
+  width:p2r(393);
+  height:100%;
+  position: fixed;
+  z-index: 8;
+  right:0;
+  background:#fff;
+  .jdTop{
+    height:p2r(79);
+    background:#f6f6f6;
+    line-height:p2r(79);
+    text-align:center;
+    font-size:p2r(30);
+    color:#909090;
+    border-bottom:1px solid #e6e6e6;
+    .jdTitle{
+      font-size:p2r(23);
+    }
+  }
+  .searBtn{
+    position: relative;
+    overflow: hidden;
+    padding:p2r(20) p2r(25);
+    &::before{
+      margin:p2r(4) 0 0 p2r(10);
+    }
+    input[type=text]{
+      width:p2r(275);
+      margin-left: 0;
+    }
+  }
+  .animal{
+    li{
+      padding:p2r(10) p2r(25);
+      overflow: hidden;
+      .aniImg{
+       float:left;
+        width:p2r(60);
+        margin-right:p2r(30);
+        height:p2r(60);
+        overflow: hidden;
+        border-radius: 50%;
+        border:1px solid #ddd;
+        img{
+          width:100%;
+        }
+      }
+    }
+    li.active{
+      .aniName{
+        color:#57bf3f;
+      }
+    }
+    .aniName{
+      display:block;
+      float:left;
+      height:p2r(60);
+      line-height:p2r(60);
+      font-size:p2r(25);
+    }
+  }
+}
+/* 路线选择 */
+ul.fromSelct{
+  height:p2r(392);
+  width:100%;
+  position: fixed;
+  z-index:9;
+  bottom:0;
+  background:#fff;
+  li{
+    border-bottom: 1px solid #d6d6d6;
+    .closeIcion{
+      display: block;
+      float: right;
+      color:black;
+    }
+  }
+  li:nth-child(1){
+    height:p2r(88);
+    line-height:p2r(88);
+    padding: 0 p2r(24);
+    font-size:p2r(30);
+    .closeIcion{
+      width:p2r(42);
+      height:p2r(42);
+      background:url('../images/yldIcon3.png') 0 p2r(14) no-repeat;
+      background-size:cover;
+      margin-top:p2r(20);
+    }
+  }
+  li:nth-child(2),li:nth-child(3),li:nth-child(4){
+    position: relative;
+    margin:0 p2r(24);
+    height:p2r(78);
+    line-height:p2r(75);
+    font-size:p2r(25);
+    color:#848484;
+    .closeIcion{
+      width:p2r(40);
+      height:p2r(40);
+      background:url('../images/yldIcon3.png') 0 p2r(-24) no-repeat;
+      background-size:cover;
+      margin-top:p2r(24);
+    }
+    
+  }
+}
+/* 推荐路线 */
+ul.tuijian{
+  height:p2r(451);
+  li:nth-child(2),li:nth-child(3),li:nth-child(4){
+    height:p2r(107);
+    line-height:p2r(107);
+  }
+  li.active{
+    .circle{
+      background:#7acb53;
+      color:#fff;
+    }
+  }
+  .circle{
+    display:block;
+    width:p2r(60);
+    height:p2r(60);
+    float:left;
+    margin-top:p2r(18);
+    line-height:p2r(60);
+    text-align: center;
+    border-radius: 50%;
+    background:#f6f6f6;
+    color:#acaeb0;
+    border:1px solid #e6e6e6;
+    margin-right:p2r(20);
+  }
+}
+
+/* 限时路线规划 */
+ul.xianshi{
+  li{
+    height:p2r(105);
+    line-height:p2r(105);
+    font-size:p2r(30);
+    &:nth-child(2){
+      padding-top:p2r(21);
+      height:p2r(105);
+      line-height:p2r(45);
+    }
+    &:nth-child(3){
+      overflow: hidden;
+      border: none;
+      height: p2r(150);
+      .searBtn{
+        margin:p2r(20) 0;
+        &::before{
+          margin-left:p2r(20);
+          margin-top:p2r(15);
+        }
+        .searRight{
+          width: p2r(167);
+          height: p2r(80);
+          line-height: p2r(78);
+          background:#59c03e;
+          border-radius: 3px;
+          color:#fff;
+          position: relative;
+          font-size:p2r(30);
+          .searBtnIcon{
+            float: left;
+            width: p2r(40);
+            height: p2r(40);
+            margin-left:p2r(20);
+            margin-right:p2r(-25);
+            margin-top:p2r(18);
+            background:url('../images/yldIcon3.png') p2r(8) p2r(-48) no-repeat;
+            background-size: cover;
+          }
+        }
+      }
+      input[type=text]{
+        width:p2r(438);
+        height:p2r(78);
+        border-color:#ccc;
+        margin-left:0;
+        margin-right:p2r(21);
+      }
+    }
+  }
+}
+
+/* 自定义路线 */
+ul.custom{
+  &::before{
+    content:'';
+    width:p2r(55);
+    height:p2r(70);
+    position: absolute;
+    z-index: 9;
+    left: p2r(25);
+    top:p2r(180);
+    background: url('../images/yldIcon3.png') p2r(0) p2r(-165) no-repeat;
+    background-size: cover;
+  }
+  li{
+    height:p2r(105);
+    line-height:p2r(105);
+    font-size:p2r(30);
+    &:nth-child(3),&:nth-child(2){
+      overflow: hidden;
+      border: none;
+      height: p2r(150);
+      margin-left:p2r(20);
+      .searBtn{
+        margin:0 0;
+        /* margin-left */
+        &::before{
+          margin-left:p2r(100);
+          margin-top:p2r(13.5);
+        }
+      }
+      input[type=text]{
+        width:p2r(540);
+        height:p2r(78);
+        border-color:#ccc;
+        margin-left:p2r(80);
+        margin-right:p2r(21);
+      }
+    }
+    &:nth-child(2){
+      margin-bottom:p2r(0);
+      .searBtn{
+        margin-top:p2r(30);
+        margin-bottom:p2r(0);
+      }
+      
+    }
+  }
+}
+
+.dialog{// 温馨提示对话框
+  position: fixed;
+  z-index: 8;
+  top: 15%;
+  left: 50%;
+  transform: translateX(-50%);
+  width: p2r(500);
+  height:p2r(220);
+  border: 1px solid #A8B2A7;
+  background: #ffffff;
+  border-radius: 5px;
+  .dialog-title{
+    position: relative;
+    height: p2r(57);
+    line-height: p2r(60);
+    padding-left: 10px;
+    font-size:p2r(32);
+   .js-close{
+      position: absolute;
+      width: p2r(35);
+      height: p2r(35);
+      top: p2r(8);
+      right: p2r(6);
+      background: url('../images/yldIcon3.png') p2r(0) p2r(12) no-repeat;
+      background-size: cover;
+   } 
+  }
+  .dialog-body{
+    font-size: p2r(25);
+    text-align: center;
+    margin:p2r(8) 0;
+    color: #707070;
+  }
+  .dialog-foot{
+    padding: p2r(30) 0;
+    text-align: center;
+    font-size: 0;
+    margin-top:p2r(-6);
+    .downloadbtn{
+      display: inline-block;
+      padding: p2r(10) p2r(30);
+      padding-top:p2r(12);
+      width: p2r(160);
+      height: p2r(60);
+      border-radius: 3px;
+      background: #59C03E;
+      color: #ffffff;
+      font-size: p2r(24);
+      box-sizing: border-box;
+    }
+  }
+}

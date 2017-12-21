@@ -1,0 +1,94 @@
+@import './mixin.scss';
+
+html,body{
+  padding: 0;
+  margin: 0;
+}
+body{
+  font-size: 16px;
+  font-family:  'Microsoft Yahei';
+}
+
+.detail-container{
+  background: #F6F6F6;
+}
+
+.swiper{// 轮播图
+  width: 100%;
+  height: p2r(333);
+  overflow: hidden;
+  .content{
+    @include clearLi;
+    height: 100%;
+    li{
+      float: left;
+      height: 100%;
+      .img{
+        display: block;
+        height: 100%;
+        width: 100%;
+      }
+    }
+  }
+}
+
+.title-box{// 标题
+  display: flex;
+  justify-content: space-between;
+  padding: 4px 12px;
+  height: p2r(112);
+  background: #ffffff;
+  box-sizing: border-box;
+  .map{
+    padding: p2r(26) 10px;
+    color: #57C040;
+    border-left: 2px solid #F6F6F6;
+    text-align: center;
+    font-size: p2r(25);
+    .mapicon{
+      display: inline-block;
+      width: 20px;
+      height: 20px;
+      background: url('../images/yldIcon2.png') no-repeat 0 -34px;
+      background-size: cover;
+      vertical-align: middle;
+    }
+  }
+  .title{
+    font-size: p2r(35);
+    font-weight: 500;
+    padding: p2r(10) 0;
+  }
+  .time{
+    font-size: p2r(25);
+    color: #CCCCCC;
+  }
+}
+
+.info{
+  margin-top: p2r(20);
+  padding: 0 12px;
+  background: #ffffff;
+  .info-title{
+    padding: p2r(30) 0;
+    font-size: p2r(32);
+  }
+  .warpper{
+    margin-bottom: p2r(20);
+    .activity{
+      color: #6FC155;
+      margin-bottom: p2r(10);
+      font-size: p2r(30);
+    }
+    .date{
+      color: #B2B2B2;
+      font-size: p2r(26);
+      line-height:p2r(35);
+      .margin{
+        display: inline-block;
+        margin-left:p2r(15);
+        margin-right:p2r(15);
+      }
+    }
+  }
+}

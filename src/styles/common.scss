@@ -1,0 +1,328 @@
+@import 'mixin.scss';
+
+/*公共样式*/
+
+.myswiper {// 购票的swiper
+  .mint-swipe-indicator {
+    background: #fff;
+    opacity: 1;
+    &.is-active {
+      background: #F0E40C;
+      opacity: 1;
+    }
+  }
+}
+.order-fie{// 购票的表单
+  .mint-cell-wrapper{
+    padding: 0;
+  }
+  .mint-cell-text{
+    &::before{
+      display: inline-block;
+      content: '*';
+      color: #F26A2B;
+      width: 18px;
+      font-size: 20px;
+      vertical-align: middle;
+
+    }
+  }
+  .mint-field-core{
+    color: #999999;
+  }
+}
+.pay-radio{// 支付列表
+  margin-top: p2r(20);
+  .mint-radiolist-title{
+    margin: 0;
+  }
+  .mint-cell{
+    padding-left: 10px;
+    &::before{
+      content: '';
+      position: absolute;
+      top: 50%;
+      width: 30px;
+      height: 30px;
+      background: url('../assets/images/icon_pay.png') no-repeat;
+      background-size: 100%;
+      transform: translateY(-50%);
+    }
+  }
+  .mint-cell:nth-child(3){
+    &::before{
+      background-position: 0 -45px;
+    }
+  }
+  .mint-cell:nth-child(4){
+    &::before{
+      background-position: 0 -90px;
+    }
+  }
+  .mint-radio-label{
+    margin-left: 15px;
+  }
+  .mint-radio-input:checked + .mint-radio-core{
+    background: url('../assets/images/icon_check.png') no-repeat;
+    background-size: 100%;
+    border-color: #5abe3e;
+    &::after{
+      background-color: transparent;
+    }
+  }
+}
+.nav{// 我的订单的切换栏
+  .mint-tab-item-label{
+    font-size: 16px;
+  }
+}
+.mint-msgbox{// 消息盒子
+  .mint-msgbox-message{
+    text-align: left;
+    font-size: 14px;
+  }
+}
+.yyxq-range{// 进度条
+  .mt-range-thumb{
+    width: 20px;
+    height: 20px;
+    top: 5px;
+    background: #5abd3e;
+  }
+  .mt-range-progress{
+    background: #5abd3e;
+  }
+}
+
+/* 主题展馆详情，语音列表 */
+.ztzgxq , .yylb {
+  .mint-swipe-indicator {
+    background: #fff;
+    opacity: 1;
+  }
+  .mint-swipe-indicator.is-active {
+    background: #2a82e4;
+    opacity: 1;
+  }
+  .mint-swipe {
+    height: p2r(398);
+    .mint-swipe-item {
+      text-align: center;
+      overflow: hidden;
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+/* 动物科学，动物之家，动物列表，语音列表 */
+.dwkx , .dwzj , .dwlb , .yylb , .ylt {
+  .mint-searchbar {
+    height: p2r(103);
+    padding: p2r(23) p2r(10) p2r(18);
+    background: #f6f6f6;
+    .mintui-search {
+      font-size: 16px;
+      margin-right: p2r(15);
+    }
+  }
+  .mint-search{
+    height:p2r(93);
+  .mint-searchbar-inner{
+    width:100%;
+    height:p2r(40);
+    border-radius:6px;
+  }
+}
+}
+
+/* 两栏分类一体li */
+  /* ul.dwfl{
+      @include clearLi;
+      margin-top:p2r(8);
+      padding:0 p2r(24);
+      li{
+        padding-top:p2r(30);
+        border-bottom:1px solid #eee;
+        overflow:hidden;
+        .dwzjLeft{
+            margin-right:p2r(28);
+        }
+        .dwzjLeft,.dwzjRight{
+            width:p2r(337);
+            height:p2r(308);
+            float:left;
+            img{
+                width:100%;
+                height:p2r(219);
+                border-radius:3px;
+            }
+            h4{
+                @include clearMargin;
+                width:p2r(337);
+                text-align:center;
+                font-size:p2r(32);
+                height:p2r(88);
+                line-height:p2r(88);
+            }
+        }
+      }
+  } */
+
+/* 动物之家，语音列表 */
+ul.dwfl{
+  @include clearLi;
+  margin-top:p2r(8);
+  padding:0 p2r(24);
+  li{
+    padding-top:p2r(30);
+    width:p2r(337);
+    height:p2r(308);
+    float:left;
+    border-bottom:1px solid #eee;
+    img{
+        width:100%;
+        height:p2r(219);
+        border-radius:3px;
+    }
+    &:nth-child(2n-1){
+      margin-right:p2r(28);
+    }
+  }
+  h4{
+    @include clearMargin;
+    width:p2r(337);
+    text-align:center;
+    font-size:p2r(32);
+    height:p2r(88);
+    line-height:p2r(88);
+  }
+}
+
+/* 主题展馆详情，动物分类详情 */
+.fixBtn {
+  float:right;
+  width: p2r(169);
+  height:p2r(48);
+  background: #5abe3e;
+  border-radius: 3px;
+  .fixIcon {
+    float:left;
+    vertical-align: text-top;
+    width: p2r(28);
+    height: p2r(28);
+    margin-top:p2r(10);
+    margin-left: p2r(20);
+    background: url('/src/assets/images/fixIcon.png') 0 p2r(-82);
+    background-size: cover;
+  }
+  .fixTitle {
+    float: left;
+    width:p2r(100);
+    height:(30);
+    line-height:2r(30);
+    font-size: p2r(22);
+    margin-top:p2r(10);
+    color: #fff;
+  }
+}
+/* 动物科学，最新动态 */
+ul.dwkx , ul.zxdt{
+  @include clearMargin;
+  padding:p2r(12) p2r(28) 0;
+  li{
+    padding:p2r(30) 0;
+    border-bottom:1px solid #eee;
+    overflow:hidden;
+    .keLeft,.keRight{
+      float:left;
+    }
+    .keLeft{
+      width:p2r(208);
+      height:p2r(135);
+      border-radius:10px;
+      img{
+        width:100%;
+        height:p2r(135);
+        border-radius:4px;
+      }
+    }
+    .keRight{
+      margin-left:p2r(30);
+      h4{
+        @include clearMargin;
+        margin-top:p2r(4);
+        width:p2r(443);
+        line-height:p2r(45);
+        font-size:p2r(35);
+        font-weight:normal;
+      }
+      p{
+        @include clearMargin;
+        font-size:p2r(24);
+        margin-top:p2r(15);
+        line-height:p2r(35);
+        color:#b1b1b1;
+        font-size:p2r(24);
+      }
+    }
+  }
+}
+/* 动物科学详情 */
+.dwkxxq , .zxdtxq {
+  margin-top: p2r(11);
+  text-align: center;
+  padding: 0 p2r(24);
+  .titHead {
+    border-bottom: 1px solid #ccc;
+    h1 {
+      margin:0 auto;
+      width: 80%;
+      line-height: p2r(60);
+      font-size: p2r(35);
+      font-weight: 550;
+    }
+    p {
+      margin-top:0;
+      overflow: hidden;
+      height: p2r(50);
+      line-height: p2r(60);
+      margin-bottom: p2r(15);
+      font-size: p2r(20);
+      color: #a4a4a4;
+      .fabuFrom {
+        margin-right: p2r(40);
+      }
+    }
+  }
+  .article {
+    line-height: p2r(42);
+    font-size: p2r(30);
+    color: #7c7c7c;
+    text-align: left;
+    text-indent: 2em;
+    img {
+      width: 100%;
+      height: p2r(400);
+      border-radius: 5px;
+      margin: p2r(18) 0;
+    }
+  }
+}
+/* 导航图按钮颜色 */
+.mint-switch-input:checked + .mint-switch-core {
+  border-color: #70df54;
+  background-color: #70df54;
+}
+.mint-switch-core{
+  width:p2r(86);
+  height:p2r(51);
+}
+.mint-switch-core::before{
+  width:p2r(83);
+  height:p2r(47);
+}
+.mint-switch-core::after{
+  width:p2r(44);
+  height:p2r(44);
+}

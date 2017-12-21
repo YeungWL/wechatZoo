@@ -1,0 +1,653 @@
+@charset "UTF-8";
+::-webkit-scrollbar {
+  display: none;
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+/* 头部滑动 */
+.wrapper {
+  background: #fff;
+  height: 1.17333rem;
+  width: 100%;
+  box-shadow: 0 0 1px 1px #ccc;
+  overflow-x: auto;
+  position: fixed;
+  top: 0;
+  z-index: 5;
+}
+.wrapper ul.yltdh {
+  width: 13.13333rem;
+  height: 1.17333rem;
+}
+.wrapper ul.yltdh li {
+  float: left;
+  font-size: 0.4rem;
+  margin: 0.33333rem 0.33333rem 0.37333rem;
+  color: #9a9a9a;
+}
+.wrapper ul.yltdh li.active {
+  color: #57bf3f;
+}
+.wrapper ul.yltdh :nth-child(1) {
+  margin-right: 0.04rem;
+  margin-top: 0.2rem;
+}
+.wrapper ul.yltdh li.searchIcon {
+  width: 0.62667rem;
+  height: 0.62667rem;
+  background: url("../images/yldIcon.png") 0 0.13333rem no-repeat;
+  background-size: cover;
+}
+
+/* 搜索框 */
+.searBtn {
+  position: absolute;
+  z-index: 6;
+  top: 0;
+  padding: 0.14667rem 0;
+  background: #fff;
+}
+.searBtn::before {
+  content: '';
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin-top: 0.08rem;
+  margin-left: 0.46667rem;
+  background: url("../images/yldIcon.png") 0rem 0.13333rem no-repeat;
+  background-size: cover;
+}
+.searBtn input[type=text], .searBtn .searRight {
+  float: left;
+}
+.searBtn input[type=text] {
+  width: 7.38667rem;
+  height: 0.77333rem;
+  margin-left: 0.30667rem;
+  border: 1px solid #b6b6b6;
+  color: #7c7c7c;
+  border-radius: 3px;
+  outline: none;
+  padding-left: 0.93333rem;
+  background: #f6f6f6;
+}
+.searBtn .searRight {
+  width: 1.30667rem;
+  height: 0.84rem;
+  line-height: 0.84rem;
+  color: #7c7c7c;
+  text-align: center;
+  font-size: 0.33333rem;
+}
+
+/* 侧边栏 */
+ul.aside {
+  position: fixed;
+  top: 2.13333rem;
+  right: 0.33333rem;
+  width: 1.10667rem;
+}
+ul.aside li {
+  width: 1.08rem;
+  height: 1.24rem;
+  float: left;
+  padding: 0 0.04rem;
+  margin-top: 2px;
+  box-shadow: 0 0 1px 1px #ccc;
+  background: #fff;
+}
+ul.aside li .ArIcon,
+ul.aside li .JsIcon,
+ul.aside li .DdIcon,
+ul.aside li .LxIcon {
+  width: 0.53333rem;
+  height: 0.53333rem;
+  margin: 0.10667rem 0.29333rem 0;
+  background: url("../images/yldIcon.png") 0rem -0.89333rem no-repeat;
+  background-size: cover;
+}
+ul.aside li .JsIcon {
+  background-position: 0rem -1.48rem;
+}
+ul.aside li .DdIcon {
+  background-position: 0rem -1.98667rem;
+}
+ul.aside li .LxIcon {
+  background-position: 0rem -2.57333rem;
+}
+ul.aside li .asideTitle {
+  height: 0.48rem;
+  line-height: 0.48rem;
+  font-size: 0.26667rem;
+  text-align: center;
+  color: #bab9b9;
+}
+ul.aside li.active {
+  box-shadow: 0 0 1px 1px #57bf3f;
+}
+ul.aside li.active .ArIcon,
+ul.aside li.active .JsIcon,
+ul.aside li.active .DdIcon,
+ul.aside li.active .LxIcon {
+  background: url("../images/yldIcon2.png") 0rem -0.89333rem no-repeat;
+  background-size: cover;
+}
+ul.aside li.active .asideTitle {
+  color: #57bf3f;
+}
+ul.aside li.active .JsIcon {
+  background-position: 0rem -1.48rem;
+}
+ul.aside li.active .DdIcon {
+  background-position: 0rem -1.98667rem;
+}
+ul.aside li.active .LxIcon {
+  background-position: 0rem -2.57333rem;
+}
+ul.aside :nth-child(1) {
+  margin-bottom: 0.30667rem;
+}
+
+/* 底部 左和右边 */
+.yltLeft,
+.yltRight {
+  position: fixed;
+  bottom: 0.42667rem;
+  width: 1.06667rem;
+  height: 1.06667rem;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ccc;
+  background: #fff;
+}
+.yltLeft a,
+.yltRight a {
+  outline: none;
+  border: none;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.yltLeft {
+  left: 0.32rem;
+}
+
+.yltRight {
+  right: 0.32rem;
+}
+
+.LeftIcon,
+.RightIcon {
+  position: absolute;
+  width: 0.6rem;
+  height: 0.6rem;
+  margin: 0.21333rem 0.22667rem 0.26667rem;
+  background: url("../images/yldIcon.png") 0 -3.52rem no-repeat;
+  background-size: cover;
+}
+
+.RightIcon {
+  margin-top: 0.26667rem;
+  background-position: 0 -4.22667rem;
+}
+
+.yltLeft.active,
+.yltRight.active {
+  box-shadow: 0 0 1px 1px #57bf3f;
+}
+.yltLeft.active .LeftIcon,
+.yltLeft.active .RightIcon,
+.yltRight.active .LeftIcon,
+.yltRight.active .RightIcon {
+  background: url("../images/yldIcon2.png") 0 -3.52rem no-repeat;
+  background-size: cover;
+}
+.yltLeft.active .RightIcon,
+.yltRight.active .RightIcon {
+  background-position: 0 -4.22667rem;
+}
+
+.bgColor {
+  position: fixed;
+  bottom: 0;
+  z-index: 7;
+  width: 100%;
+  height: 100%;
+  background: rgba(30, 30, 30, 0.4);
+}
+
+/* 地图 */
+.footer {
+  position: absolute;
+  margin-top: 1.17333rem;
+  width: 100%;
+  height: 100%;
+  background: url("../images/yltBg.png") -0.66667rem 0.53333rem no-repeat;
+  background-size: cover;
+}
+
+/* 语音解说 */
+.jstk {
+  position: fixed;
+  z-index: 9;
+  width: 8.13333rem;
+  height: 2.13333rem;
+  top: 3.76rem;
+  left: 0.28rem;
+  background: #fff;
+  box-shadow: 0 0 1px 1px #ccc;
+  border-radius: 4px;
+}
+.jstk div.jstkTop {
+  padding: 0.13333rem 0.26667rem;
+  overflow: hidden;
+}
+.jstk div.jstkTop .jsClose {
+  position: absolute;
+  right: 0.26667rem;
+  top: 0.26667rem;
+  font-size: 0.46667rem;
+  color: #6bd551;
+}
+.jstk div.jstkTop .jsTitle,
+.jstk div.jstkTop .mui-switch,
+.jstk div.jstkTop .jsClose {
+  float: left;
+}
+.jstk div.jstkTop .jsTitle {
+  margin-right: 0.4rem;
+  font-size: 0.4rem;
+  line-height: 0.66667rem;
+}
+.jstk div.jstkTop .mui-switch {
+  margin-right: 0.17333rem;
+}
+.jstk p {
+  padding: 0.13333rem 0.26667rem;
+  margin: 0;
+  line-height: 0.4rem;
+  font-size: 0.33333rem;
+  letter-spacing: 1px;
+  color: #8a8a8a;
+}
+
+/* 开关控制 */
+.mui-switch {
+  width: 1.14667rem;
+  height: 0.68rem;
+  position: relative;
+  border: 1px solid #dfdfdf;
+  background-color: #fdfdfd;
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  border-radius: 0.33333rem;
+  border-top-left-radius: 0.33333rem;
+  border-top-right-radius: 0.33333rem;
+  border-bottom-left-radius: 0.33333rem;
+  border-bottom-right-radius: 0.33333rem;
+  background-clip: content-box;
+  display: inline-block;
+  -webkit-appearance: none;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+      -ms-user-select: none;
+          user-select: none;
+  outline: none;
+}
+
+.mui-switch:before {
+  content: '';
+  width: 0.6rem;
+  height: 0.6rem;
+  position: absolute;
+  top: 0px;
+  left: 0;
+  border-radius: 20px;
+  border-top-left-radius: 20px;
+  border-top-right-radius: 20px;
+  border-bottom-left-radius: 20px;
+  border-bottom-right-radius: 20px;
+  background-color: #fff;
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
+}
+
+.mui-switch:checked {
+  border-color: #64bd63;
+  box-shadow: #64bd63 0 0 0 16px inset;
+  background-color: #64bd63;
+}
+
+.mui-switch:checked:before {
+  left: 21px;
+}
+
+.mui-switch.mui-switch-animbg {
+  -webkit-transition: background-color ease 0.4s;
+          transition: background-color ease 0.4s;
+}
+
+.mui-switch.mui-switch-animbg:before {
+  -webkit-transition: left 0.3s;
+          transition: left 0.3s;
+}
+
+.mui-switch.mui-switch-animbg:checked {
+  box-shadow: #dfdfdf 0 0 0 0 inset;
+  background-color: #64bd63;
+  -webkit-transition: border-color 0.4s, background-color ease 0.4s;
+          transition: border-color 0.4s, background-color ease 0.4s;
+}
+
+.mui-switch.mui-switch-animbg:checked:before {
+  -webkit-transition: left 0.3s;
+          transition: left 0.3s;
+}
+
+.mui-switch.mui-switch-anim {
+  -webkit-transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s;
+          transition: border cubic-bezier(0, 0, 0, 1) 0.4s, box-shadow cubic-bezier(0, 0, 0, 1) 0.4s;
+}
+
+.mui-switch.mui-switch-anim:before {
+  -webkit-transition: left 0.3s;
+          transition: left 0.3s;
+}
+
+.mui-switch.mui-switch-anim:checked {
+  box-shadow: #64bd63 0 0 0 16px inset;
+  background-color: #64bd63;
+  -webkit-transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s;
+          transition: border ease 0.4s, box-shadow ease 0.4s, background-color ease 1.2s;
+}
+
+.mui-switch.mui-switch-anim:checked:before {
+  -webkit-transition: left 0.3s;
+          transition: left 0.3s;
+}
+
+/* zoo景点 */
+.gzJinDian {
+  width: 5.24rem;
+  height: 100%;
+  position: fixed;
+  z-index: 8;
+  right: 0;
+  background: #fff;
+}
+.gzJinDian .jdTop {
+  height: 1.05333rem;
+  background: #f6f6f6;
+  line-height: 1.05333rem;
+  text-align: center;
+  font-size: 0.4rem;
+  color: #909090;
+  border-bottom: 1px solid #e6e6e6;
+}
+.gzJinDian .jdTop .jdTitle {
+  font-size: 0.30667rem;
+}
+.gzJinDian .searBtn {
+  position: relative;
+  overflow: hidden;
+  padding: 0.26667rem 0.33333rem;
+}
+.gzJinDian .searBtn::before {
+  margin: 0.05333rem 0 0 0.13333rem;
+}
+.gzJinDian .searBtn input[type=text] {
+  width: 3.66667rem;
+  margin-left: 0;
+}
+.gzJinDian .animal li {
+  padding: 0.13333rem 0.33333rem;
+  overflow: hidden;
+}
+.gzJinDian .animal li .aniImg {
+  float: left;
+  width: 0.8rem;
+  margin-right: 0.4rem;
+  height: 0.8rem;
+  overflow: hidden;
+  border-radius: 50%;
+  border: 1px solid #ddd;
+}
+.gzJinDian .animal li .aniImg img {
+  width: 100%;
+}
+.gzJinDian .animal li.active .aniName {
+  color: #57bf3f;
+}
+.gzJinDian .animal .aniName {
+  display: block;
+  float: left;
+  height: 0.8rem;
+  line-height: 0.8rem;
+  font-size: 0.33333rem;
+}
+
+/* 路线选择 */
+ul.fromSelct {
+  height: 5.22667rem;
+  width: 100%;
+  position: fixed;
+  z-index: 9;
+  bottom: 0;
+  background: #fff;
+}
+ul.fromSelct li {
+  border-bottom: 1px solid #d6d6d6;
+}
+ul.fromSelct li .closeIcion {
+  display: block;
+  float: right;
+  color: black;
+}
+ul.fromSelct li:nth-child(1) {
+  height: 1.17333rem;
+  line-height: 1.17333rem;
+  padding: 0 0.32rem;
+  font-size: 0.4rem;
+}
+ul.fromSelct li:nth-child(1) .closeIcion {
+  width: 0.56rem;
+  height: 0.56rem;
+  background: url("../images/yldIcon3.png") 0 0.18667rem no-repeat;
+  background-size: cover;
+  margin-top: 0.26667rem;
+}
+ul.fromSelct li:nth-child(2), ul.fromSelct li:nth-child(3), ul.fromSelct li:nth-child(4) {
+  position: relative;
+  margin: 0 0.32rem;
+  height: 1.04rem;
+  line-height: 1rem;
+  font-size: 0.33333rem;
+  color: #848484;
+}
+ul.fromSelct li:nth-child(2) .closeIcion, ul.fromSelct li:nth-child(3) .closeIcion, ul.fromSelct li:nth-child(4) .closeIcion {
+  width: 0.53333rem;
+  height: 0.53333rem;
+  background: url("../images/yldIcon3.png") 0 -0.32rem no-repeat;
+  background-size: cover;
+  margin-top: 0.32rem;
+}
+
+/* 推荐路线 */
+ul.tuijian {
+  height: 6.01333rem;
+}
+ul.tuijian li:nth-child(2), ul.tuijian li:nth-child(3), ul.tuijian li:nth-child(4) {
+  height: 1.42667rem;
+  line-height: 1.42667rem;
+}
+ul.tuijian li.active .circle {
+  background: #7acb53;
+  color: #fff;
+}
+ul.tuijian .circle {
+  display: block;
+  width: 0.8rem;
+  height: 0.8rem;
+  float: left;
+  margin-top: 0.24rem;
+  line-height: 0.8rem;
+  text-align: center;
+  border-radius: 50%;
+  background: #f6f6f6;
+  color: #acaeb0;
+  border: 1px solid #e6e6e6;
+  margin-right: 0.26667rem;
+}
+
+/* 限时路线规划 */
+ul.xianshi li {
+  height: 1.4rem;
+  line-height: 1.4rem;
+  font-size: 0.4rem;
+}
+ul.xianshi li:nth-child(2) {
+  padding-top: 0.28rem;
+  height: 1.4rem;
+  line-height: 0.6rem;
+}
+ul.xianshi li:nth-child(3) {
+  overflow: hidden;
+  border: none;
+  height: 2rem;
+}
+ul.xianshi li:nth-child(3) .searBtn {
+  margin: 0.26667rem 0;
+}
+ul.xianshi li:nth-child(3) .searBtn::before {
+  margin-left: 0.26667rem;
+  margin-top: 0.2rem;
+}
+ul.xianshi li:nth-child(3) .searBtn .searRight {
+  width: 2.22667rem;
+  height: 1.06667rem;
+  line-height: 1.04rem;
+  background: #59c03e;
+  border-radius: 3px;
+  color: #fff;
+  position: relative;
+  font-size: 0.4rem;
+}
+ul.xianshi li:nth-child(3) .searBtn .searRight .searBtnIcon {
+  float: left;
+  width: 0.53333rem;
+  height: 0.53333rem;
+  margin-left: 0.26667rem;
+  margin-right: -0.33333rem;
+  margin-top: 0.24rem;
+  background: url("../images/yldIcon3.png") 0.10667rem -0.64rem no-repeat;
+  background-size: cover;
+}
+ul.xianshi li:nth-child(3) input[type=text] {
+  width: 5.84rem;
+  height: 1.04rem;
+  border-color: #ccc;
+  margin-left: 0;
+  margin-right: 0.28rem;
+}
+
+/* 自定义路线 */
+ul.custom::before {
+  content: '';
+  width: 0.73333rem;
+  height: 0.93333rem;
+  position: absolute;
+  z-index: 9;
+  left: 0.33333rem;
+  top: 2.4rem;
+  background: url("../images/yldIcon3.png") 0rem -2.2rem no-repeat;
+  background-size: cover;
+}
+ul.custom li {
+  height: 1.4rem;
+  line-height: 1.4rem;
+  font-size: 0.4rem;
+}
+ul.custom li:nth-child(3), ul.custom li:nth-child(2) {
+  overflow: hidden;
+  border: none;
+  height: 2rem;
+  margin-left: 0.26667rem;
+}
+ul.custom li:nth-child(3) .searBtn, ul.custom li:nth-child(2) .searBtn {
+  margin: 0 0
+  /* margin-left */
+}
+ul.custom li:nth-child(3) .searBtn::before, ul.custom li:nth-child(2) .searBtn::before {
+  margin-left: 1.33333rem;
+  margin-top: 0.18rem;
+}
+ul.custom li:nth-child(3) input[type=text], ul.custom li:nth-child(2) input[type=text] {
+  width: 7.2rem;
+  height: 1.04rem;
+  border-color: #ccc;
+  margin-left: 1.06667rem;
+  margin-right: 0.28rem;
+}
+ul.custom li:nth-child(2) {
+  margin-bottom: 0rem;
+}
+ul.custom li:nth-child(2) .searBtn {
+  margin-top: 0.4rem;
+  margin-bottom: 0rem;
+}
+
+.dialog {
+  position: fixed;
+  z-index: 8;
+  top: 15%;
+  left: 50%;
+  -webkit-transform: translateX(-50%);
+      -ms-transform: translateX(-50%);
+          transform: translateX(-50%);
+  width: 6.66667rem;
+  height: 2.93333rem;
+  border: 1px solid #A8B2A7;
+  background: #ffffff;
+  border-radius: 5px;
+}
+.dialog .dialog-title {
+  position: relative;
+  height: 0.76rem;
+  line-height: 0.8rem;
+  padding-left: 10px;
+  font-size: 0.42667rem;
+}
+.dialog .dialog-title .js-close {
+  position: absolute;
+  width: 0.46667rem;
+  height: 0.46667rem;
+  top: 0.10667rem;
+  right: 0.08rem;
+  background: url("../images/yldIcon3.png") 0rem 0.16rem no-repeat;
+  background-size: cover;
+}
+.dialog .dialog-body {
+  font-size: 0.33333rem;
+  text-align: center;
+  margin: 0.10667rem 0;
+  color: #707070;
+}
+.dialog .dialog-foot {
+  padding: 0.4rem 0;
+  text-align: center;
+  font-size: 0;
+  margin-top: -0.08rem;
+}
+.dialog .dialog-foot .downloadbtn {
+  display: inline-block;
+  padding: 0.13333rem 0.4rem;
+  padding-top: 0.16rem;
+  width: 2.13333rem;
+  height: 0.8rem;
+  border-radius: 3px;
+  background: #59C03E;
+  color: #ffffff;
+  font-size: 0.32rem;
+  box-sizing: border-box;
+}

@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Document</title>
+  <style>
+    *{
+      padding: 0;
+      margin: 0;
+    }
+    .wrapper{
+      height: 80px;
+      width: 100%;
+      overflow: hidden;
+    }
+    .content{
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      width: 300%;
+      height: 80px;
+    }
+    .content li{
+      float: left;
+      height: 80px;
+    }
+    .dialog .js-close{
+      display: inline-block;
+      background: url('./images/yldIcon3.png') no-repeat;
+    }
+  </style>
+</head>
+<body>
+  <div class="wrapper">
+    <ul class="content">
+      <li>test</li>
+      <li>test</li>
+      <li>test</li>
+    </ul>
+    <!-- 这里可以放一些其它的 DOM，但不会影响滚动 -->
+  </div>
+  <div>点我有惊喜</div>
+  <div class="dialog">
+    <div class="dialog-title">温馨提示<i class="js-close"></i></div>
+    <div>想体验AR功能, 请下载广州动物园APP!</div>
+    <div>
+      <span>App下载</span>
+    </div>
+  </div>
+</body>
+</html>
+
+<script src="./lib/better-scroll/bscroll.min.js"></script>
+<script>
+let wrapper = document.querySelector('.wrapper');
+let scroll = new BScroll(wrapper,{
+  scrollX: true,
+  scrollY: false,
+  momentum: false,   //关闭或者打开惯性运动的执行
+  snap: true,       //隔断（翻页）
+  snapLoop: this.loop,   //无限滚动
+  snapThreshold: 0,
+  snapSpeed: 600,   //滑动的时间
+});
+document.querySelectorAll('.content li').forEach(function(value){
+  value.style.width = window.screen.width + 'px';
+  value.style.background = 'red';
+})
+</script>

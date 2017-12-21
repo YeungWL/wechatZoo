@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <script>
+    document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+  </script>
+  <title>Document</title>
+  <link rel="stylesheet"  href="./css/serve-list.css">
+</head>
+
+<body>
+  <div class="list-container">
+    <!-- 顶部导航 -->
+    <div class="wrapper">
+      <ul class='yltdh'>
+        <li class='searchIcon'></li>
+        <li>热点</li>
+        <li>洗手间</li>
+        <li class='active'>景点</li>
+        <li>动物</li>
+        <li>商店</li>
+        <li>餐饮</li>
+        <li>餐饮</li>
+        <li>餐饮</li>
+      </ul>
+    </div>
+    <!-- 搜索框 -->
+    <div class="searBtn" style="display:none">
+      <input type="text" value="">
+      <div class="searRight">取消</div>
+    </div>
+    <ul class="list-content">
+      <li class="list-item">
+        <div class="list-img">
+          <img src="./images/test.png" alt="" class="img">
+        </div>
+        <a href="./detail.html">
+            <div class="list-info">
+                <div class="list-title">广州海洋馆</div>
+                <div class="list-explain">是一家集游乐是一家集游乐是一家集游乐是是一家集游乐是一家集游乐是一家集游乐是</div>
+            </div>
+        </a>
+      </li>
+      <li class="list-item">
+        <div class="list-img">
+          <img src="./images/test.png" alt="" class="img">
+        </div>
+        <a href="#">
+        <div class="list-info">
+          <div class="list-title">广州海洋馆</div>
+          <div class="list-explain">是一家集游乐是一家集游乐是一家集游乐是是一家集游乐是一家集游乐是一家集游乐是</div>
+        </div>
+      </a>
+      </li>
+      <li class="list-item">
+        <div class="list-img">
+          <img src="./images/test.png" alt="" class="img">
+        </div>
+        <a href="#">
+        <div class="list-info">
+          <div class="list-title">广州海洋馆</div>
+          <div class="list-explain">是一家集游乐是一家集游乐是一家集游乐是是一家集游乐是一家集游乐是一家集游乐是</div>
+        </div>
+      </a>
+      </li>
+    </ul>
+  </div>
+  <div class="dialog" style="display: none;">
+    <div class="dialog-title">温馨提示<i class="js-close"></i></div>
+    <div class="dialog-body">想体验AR功能, 请下载广州动物园APP!</div>
+    <div class="dialog-foot">
+      <span class="downloadbtn">App下载</span>
+    </div>
+  </div>
+</body>
+
+</html>
+
+<script src="./lib/better-scroll/bscroll.min.js"></script>
+<script>
+  /* 滑动控制 */
+  let scroll = new BScroll( $('.wrapper') ,{
+    click: true,
+    scrollX:true
+  });
+  /* 全局函数 */
+  function $(clsName) {
+      return document.querySelector(clsName);
+    }
+    function $show(clsName, display) {
+      return clsName.style.display = display;
+    }
+    /* 搜索控制 */
+    $('.yltdh>li.searchIcon').onclick = function () {
+      $show( $('.searBtn') , 'block');
+    }
+    $('.searRight').onclick = function () {
+      $show( $('.searBtn') , 'none');
+    }
+</script>

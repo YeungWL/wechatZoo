@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!--<meta name="viewport" content="width=device-width; initial-scale=1.0; maximum-scale=1; user-scalable=no;">-->
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>广州动物园zoo</title>
+  <link rel="stylesheet" href="./css/index.css">
+  <script>
+    document.querySelector('html').style.fontSize = window.screen.width / 10 + 'px';
+  </script>
+</head>
+
+<body>
+  <!-- 导航列表 -->
+  <div class="gzJinDian" style="display:none">
+    <div class="jdTop">广州动物园
+      <span class="jdTitle">（78个景点）</span>
+    </div>
+    <div class="searBtn">
+      <input type="text" value="" placeholder="请输入景点">
+    </div>
+    <ul class="animal">
+      <li>
+        <div class="aniImg">
+          <img src="./images/zooHeads.png" alt="">
+        </div>
+        <div class="aniName">川金丝猴</div>
+      </li>
+      <li>
+        <div class="aniImg">
+          <img src="./images/zooHeads.png" alt="">
+        </div>
+        <div class="aniName">川金丝猴</div>
+      </li>
+      <li>
+        <div class="aniImg">
+          <img src="./images/zooHeads.png" alt="">
+        </div>
+        <div class="aniName">川金丝猴</div>
+      </li>
+      <li>
+        <div class="aniImg">
+          <img src="./images/zooHeads.png" alt="">
+        </div>
+        <div class="aniName">川金丝猴</div>
+      </li>
+    </ul>
+  </div>
+  <!-- 遮罩 -->
+  <div class="bgColor" style="display:none"></div>
+  <!-- 顶部滑块 -->
+  <div class="wrapper">
+    <ul class='yltdh'>
+      <li class='searchIcon'></li>
+      <li>热点</li>
+      <li>洗手间</li>
+      <li class='active'>景点</li>
+      <li>动物</li>
+      <li>商店</li>
+      <li>餐饮</li>
+      <li>餐饮</li>
+      <li>餐饮</li>
+    </ul>
+    <!-- 这里可以放一些其它的 DOM，但不会影响滚动 -->
+  </div>
+  <!-- 搜索框 -->
+  <div class="searBtn" style="display:none;position:fixed;">
+    <input type="text" value="">
+    <div class="searRight">取消</div>
+  </div>
+  <!-- 地图 -->
+  <div class="footer"></div>
+  <!-- 侧边栏 -->
+  <ul class='aside'>
+    <li>
+      <div class='ArIcon'></div>
+      <p class='asideTitle'>AR实景</p>
+    </li>
+    <li>
+      <div class='JsIcon'></div>
+      <p class='asideTitle'>解说</p>
+    </li>
+    <li>
+      <div class='DdIcon'></div>
+      <p class='asideTitle'>导航</p>
+    </li>
+    <li>
+      <div class='LxIcon'></div>
+      <p class='asideTitle'>路线</p>
+    </li>
+  </ul>
+  <!-- 底部 左和右边 -->
+  <div class="yltLeft">
+    <span class="LeftIcon"></span>
+  </div>
+  <div class="yltRight">
+    <a href="./serve-list.html">
+      <span class="RightIcon"></span>
+    </a>
+  </div>
+  <!-- 语音解说 -->
+  <div class="jstk" style="display:none">
+    <div class="jstkTop">
+      <div class="jsTitle">自动解说</div>
+      <div class="jsBtn">
+        <label>
+          <input class="mui-switch mui-switch-animbg" type="checkbox" checked="">
+        </label>
+        <label>
+          <input class="mui-switch mui-switch-animbg" type="checkbox">
+        </label>
+      </div>
+      <div class="jsClose">X</div>
+    </div>
+    <p class="jsContent">打开按钮后，靠近某个景点附近时，自动弹出解说框，自动播放该景点语音解说。</p>
+  </div>
+  <!-- 路线选择 -->
+  <ul class="fromSelct" style="display:none">
+    <li>
+      路线
+      <span class="closeIcion selectClose"></span>
+    </li>
+    <li>
+      推荐路线
+      <span class="closeIcion"></span>
+    </li>
+    <li>
+      限时路线
+      <span class="closeIcion"></span>
+    </li>
+    <li>
+      自定义起止点路线规划
+      <span class="closeIcion"></span>
+    </li>
+  </ul>
+  <!-- 推荐路线 -->
+  <ul class="fromSelct tuijian" style="display:none">
+    <li>
+      推荐路线
+      <span class="closeIcion selectClose"></span>
+    </li>
+    <li class="active">
+      <span class="circle">1</span>
+      广州动物园全景游
+    </li>
+    <li>
+      <span class="circle">2</span>
+      北门-虎山-南门
+    </li>
+    <li>
+      <span class="circle">3</span>
+      南门-小型兽山-北门
+    </li>
+  </ul>
+  <!-- 限时路线 -->
+  <ul class="fromSelct xianshi" style="display:none">
+    <li>
+      限时路线规划
+      <span class="closeIcion selectClose"></span>
+    </li>
+    <li>
+      如果您时间紧迫，无法全部参观完，定位引擎能让您在限定的时间内，参观指定的区域。
+    </li>
+    <li>
+      <div class="searBtn">
+        <input type="text" value="">
+        <div class="searRight">
+          <span class="searBtnIcon"></span>搜索</div>
+      </div>
+    </li>
+  </ul>
+  <!-- 自定义路线 -->
+  <ul class="fromSelct custom" style="display:none">
+    <li>
+      限时路线规划
+      <span class="closeIcion selectClose"></span>
+    </li>
+    <li>
+      <div class="searBtn">
+        <input type="text" value="" placeholder="请输入起点">
+    </li>
+    <li>
+      <div class="searBtn">
+        <input type="text" value="" placeholder="请输入终点">
+    </li>
+  </ul>
+  <!-- 点击下载 -->
+  <div class="dialog" style="display: none;">
+    <div class="dialog-title">温馨提示
+      <i class="js-close"></i>
+    </div>
+    <div class="dialog-body">想体验AR功能, 请下载广州动物园APP!</div>
+    <div class="dialog-foot">
+      <span class="downloadbtn">App下载</span>
+    </div>
+  </div>
+
+  <script src="./lib/better-scroll/bscroll.min.js"></script>
+  <script>
+    /* 滑动控制 */
+    let scroll = new BScroll( $('.wrapper') , {
+      click: true,
+      scrollX: true
+    });
+    /* 搜索控制 */
+    $('.yltdh>li.searchIcon').onclick = function () {
+      $show( $all('.searBtn')[1] , 'block');
+    }
+    $('.searRight').onclick = function () {
+      $show( $all('.searBtn')[1] , 'none');
+    }
+    /* 全局函数 */
+    function $(clsName) {
+      return document.querySelector(clsName);
+    }
+    function $all(clsName) {
+      return document.querySelectorAll(clsName);
+    }
+    function $show(clsName, display) {
+      if (arguments[1] === 'remove') {
+        return clsName.classList.remove('active');
+      } else if (arguments[1] === 'add') {
+        return clsName.classList.add('active');
+      } else if (arguments[1] === 'split') {
+        return clsName.className.split(/\s+/)[0];
+      }
+      return clsName.style.display = display;
+    }
+    /* 点击背景控制按钮激活状态 */
+    $('.bgColor').onclick = function () {
+      $show(this, 'none');
+      /* 解说弹框 */
+      $show(jstk, 'none');
+      $show(jieshuo, 'remove');
+      /* 导航弹框 */
+      $show(gzJinDian, 'none');
+      $show(daohang, 'remove');
+      /* 路线弹框 */
+      $show(fromSelct, 'none');
+      $show(tuijian, 'none');
+      $show(xian, 'none');
+      $show(custom, 'none');
+      $show(luxian, 'remove');
+      /* AR实景弹框 */
+      $show(dialog, 'none');
+      $show(shijing, 'remove');
+    }
+    /* AR实景提示下载 */
+    var dialog = $('.dialog');
+    var shijing = $all('.aside>li')[0];
+    shijing.onclick = function () {
+      this.classList.add("active");
+      if ($show(this, 'split') == 'active') {
+        $show(dialog, 'block');
+        $show(bgColor, 'block');
+      }
+    }
+    $('.js-close').onclick = function () {
+      $show(dialog, 'none');
+      $show(shijing, 'remove');
+      $show(bgColor, 'none');
+    }
+    /*  语音解说 */
+    var jieshuo = $all('.aside>li')[1];
+    var jstk = $('.jstk');
+    var jsClose = $('.jsClose');
+    var bgColor = $('.bgColor');
+    jieshuo.onclick = function () {
+      $show(this, 'add')
+      if ($show(this, 'split') == 'active') {
+        $show(jstk, 'block');
+        $show(bgColor, 'block');
+        /* 解说关闭点击 */
+        jsClose.onclick = function () {
+          $show(jieshuo, 'remove');
+          $show(jstk, 'none');
+          $show(bgColor, 'none');
+        }
+      }
+    }
+    /* 导航控制 */
+    var daohang = $all('.aside>li')[2];
+    var gzJinDian = $('.gzJinDian');
+    var animal = $all('.animal>li');
+    daohang.onclick = function () {
+      $show(this, 'add');
+      var className = this.className.split(/\s+/)[0]
+      if (className == 'active') {
+        $show(gzJinDian, 'block');
+        $show(bgColor, 'block');
+        /* 导航列表进来时候的点击 */
+        for (var i = 0; i < animal.length; i++) {
+          animal.i = i;
+          /* 设置进来时，清除所有active */
+          animal[i].onclick = function () {
+            for (var j = 0; j < animal.length; j++) {
+              $show(animal[j], 'remove');
+            }
+            $show(this, 'add');
+          }
+        }
+      } else {
+        $show(gzJinDian, 'none');
+        $show(bgColor, 'none');
+      }
+    }
+    /* 路线控制 */
+    var luxianClose = $all('.selectClose');
+    var fromSelct = $('.fromSelct');
+    var luxian = $all('.aside>li')[3];
+    luxian.onclick = function () {
+      $show(this, 'add');
+      var className = this.className.split(/\s+/)[0]
+      if (className == 'active') {
+        $show(fromSelct, 'block');
+        $show(bgColor, 'block');
+      } else {
+        $show(fromSelct, 'none');
+        $show(bgColor, 'none');
+      }
+    }
+    /* 激活状态时的路线关闭控制 */
+    for (var i = 0; i < luxianClose.length; i++) {
+      luxianClose.i = i;
+      luxianClose[i].onclick = function () {
+        $show(luxian, 'remove');
+        $show(fromSelct, 'none');
+        $show(tuijian, 'none');
+        $show(xian, 'none');
+        $show(custom, 'none');
+        $show(bgColor, 'none');
+      }
+    }
+    /* 路线选择 */
+    var fromLi = $all('ul.fromSelct>li');
+    var tuijian = $('.tuijian.fromSelct');
+    var xian = $('.xianshi.fromSelct');
+    var custom = $('.custom.fromSelct');
+    fromLi[1].onclick = function () {
+      $show(fromSelct, 'none');
+      $show(tuijian, 'block');
+    }
+    fromLi[2].onclick = function () {
+      $show(fromSelct, 'none');
+      $show(xian, 'block');
+    }
+    fromLi[3].onclick = function () {
+      $show(fromSelct, 'none');
+      $show(custom, 'block');
+    }
+    /* 定位点击控制 */
+    $('.yltLeft').onclick = function () {
+      this.classList.toggle('active');
+    }
+  </script>
+</body>
+</html>

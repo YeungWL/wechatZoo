@@ -1,0 +1,10 @@
+// mixin
+@function p2r($size){
+  @return $size / 75 * 1rem;
+}
+
+@mixin clearLi{
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
